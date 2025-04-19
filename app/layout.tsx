@@ -45,7 +45,7 @@ const workSans = localFont({
       style: "normal",
     },
   ],
-  variable: "--font-work-sans",
+  variable: "--font-worksans",
 });
 
 export const metadata: Metadata = {
@@ -60,7 +60,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={workSans.variable}>{children}</body>
+      <body className={`${workSans.variable} font-worksans`}>{children}</body>
     </html>
   );
 }

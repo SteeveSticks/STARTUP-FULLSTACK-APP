@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+/* Custom Theme Variables */
 @theme {
   --breakpoint-*: initial;
   --breakpoint-xs: 475px;
@@ -18,7 +19,6 @@
   --color-white-default: #ffffff;
 
   --font-*: initial;
-  --font-work-sans: [var(--font-work-sans)];
 
   --radius-border-lg: var(--radius);
   --radius-border-md: calc(var(--radius) - 2px);
@@ -51,5 +51,16 @@
   }
   body {
     @apply relative font-normal z-1 bg-gray-50;
+  }
+}
+
+@layer utilities {
+  .heading {
+    @apply uppercase text-sm bg-black px-6 py-3 font-extrabold text-white text-[36px] leading-[46px] max-w-5xl text-center my-5;
+
+    @media (min-width: 640px) {
+      font-size: 54px;
+      line-height: 64px;
+    }
   }
 }

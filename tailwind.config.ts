@@ -10,7 +10,11 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        worksans: ["var(--font-worksans)"],
+      },
+    },
   },
   plugins: [animate, typography],
 };
