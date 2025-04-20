@@ -26,7 +26,7 @@
   }
 
   .text-26-semibold {
-    @apply font-semibold text-[26px] text-black;
+    @apply font-semibold text-[23px] text-black;
   }
 
   .text-24-black {
@@ -38,7 +38,7 @@
   }
 
   .text-16-medium {
-    @apply font-medium text-[16px] text-black;
+    @apply font-medium text-[14px] text-black;
   }
 
   .text-14-normal {
@@ -131,11 +131,11 @@
 
   /* startupcard */
   .startup-card {
-    @apply bg-white border-[5px] border-black py-6 px-5 rounded-[22px] shadow-sm hover:border-white transition-all duration-500 hover:shadow-md hover:bg-white/100;
+    @apply bg-white border-[5px] border-black py-3 px-4 rounded-[22px] shadow-sm hover:border-white transition-all duration-500 hover:shadow-md hover:bg-white/100;
   }
 
   .startup-card_date {
-    @apply font-medium text-[16px] bg-white/100 px-4 py-2 rounded-full group-hover:bg-white/100;
+    @apply font-medium text-[14px] bg-white/100  rounded-full group-hover:bg-white/100;
   }
 
   .startup-card_desc {
