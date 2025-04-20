@@ -1,4 +1,4 @@
-import Navbar from "../components/Navbar";
+import Navbar from "../../components/Navbar";
 
 export default function Layout({
   children,
@@ -6,7 +6,7 @@ export default function Layout({
   return (
     <div>
       <Navbar />
-      <main className="font-work-sans">{children}</main>
+      <main className="font-worksans">{children}</main>
     </div>
   );
 }
