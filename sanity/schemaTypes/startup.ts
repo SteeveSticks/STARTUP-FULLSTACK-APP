@@ -42,12 +42,7 @@ export const startup = defineType({
     }),
     defineField({
       name: "pitch",
-      type: "markdown",
+      type: "markdown", // sanity plugin
     }),
   ],
-  preview: {
-    select: {
-      title: "name",
-    },
-  },
 });
