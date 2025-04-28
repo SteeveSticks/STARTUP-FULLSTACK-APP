@@ -50,7 +50,7 @@
   }
 
   .tag {
-    @apply bg-black px-6 py-3 font-sans font-bold rounded-sm uppercase relative;
+    @apply bg-black px-6 py-3 font-sans font-bold rounded-sm uppercase relative text-white;
   }
 
   .heading {
@@ -207,6 +207,10 @@
     background-size: 5% 100%;
     background-position: center;
     background-repeat: repeat-x;
+  }
+
+  .tag-tri {
+    @apply before:content-[''] before:absolute before:top-2 before:left-2 before:border-t-[10px] before:border-t-black before:border-r-[10px] before:border-r-transparent after:content-[''] after:absolute after:bottom-2 after:right-2 after:border-b-[10px] after:border-b-black after:border-l-[10px] after:border-l-transparent;
   }
 
   .text-white-100\/80 {
