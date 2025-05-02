@@ -1,6 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
 @import "tailwindcss";
+@plugin '@tailwindcss/typography';
+
+@theme {
+  --color-secondary: #fbe843;
+  --color-primary-100: #ffe8f0;
+  --color-primary: #ee2b69;
+}
 
 @layer base {
   :root {
@@ -50,7 +57,7 @@
   }
 
   .tag {
-    @apply bg-black px-6 py-3 font-sans font-bold rounded-sm uppercase relative text-white;
+    @apply bg-secondary px-6 py-3 font-sans font-bold rounded-sm uppercase relative;
   }
 
   .heading {
@@ -185,15 +192,15 @@
 
   /* view */
   .view-container {
-    @apply flex justify-end items-center mt-5 fixed bottom-3 right-3;
+    @apply flex justify-end items-center mt-5 fixed bottom-3 right-3 rounded-lg bg-primary-100;
   }
 
   .view-text {
-    @apply font-medium text-[16px] bg-white/100 px-4 py-2 rounded-lg capitalize;
+    @apply font-medium text-[16px] px-4 py-2 rounded-lg capitalize;
   }
 
   .category-tag {
-    @apply font-medium text-[16px] bg-white/100 px-4 py-2 rounded-full;
+    @apply font-medium text-[16px] bg-primary-100 px-4 py-2 rounded-full;
   }
 
   .pattern {
