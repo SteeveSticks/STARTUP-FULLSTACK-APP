@@ -1,20 +1,73 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useActionState, useState } from "react";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import MDEditor from "@uiw/react-md-editor";
 import { Button } from "./ui/button";
 import { Send } from "lucide-react";
+import { formSchma } from "@/lib/validation";
+import { z } from "zod";
+import { toast } from "sonner";
+// import { useRouter } from "next/router";
 
 const StartupForm = () => {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [pitch, setPitch] = React.useState("");
+  // const router = useRouter();
 
-  const isPending = false;
+  const handleFormSubmit = async (prevState: any, formData: FormData) => {
+    try {
+      const formValues = {
+        title: formData.get("title") as string,
+        description: formData.get("description") as string,
+        category: formData.get("category") as string,
+        link: formData.get("link") as string,
+        pitch,
+      };
+
+      await formSchma.parseAsync(formValues);
+
+      console.log(formValues);
+
+      // const result = await createIdea(prevState, formData, pitch)
+
+      // console.log(result)
+      // if (result.status == "SUCCESS") {
+      //   toast.success("Your startp pitch has been created successfully")
+
+      //   router.push(`/startup/${result.id}`);
+      // }
+
+      // return result;
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        const fieldErrors = error.flatten().fieldErrors;
+
+        setErrors(fieldErrors as unknown as Record<string, string>);
+
+        toast.error("Please check your inputs and try again");
+
+        return { ...prevState, error: "Validation failed", status: "ERROR" };
+      }
+
+      toast.error("An unexpected error has occured");
+
+      return {
+        ...prevState,
+        error: "An unexpected error has occured",
+        status: "ERROR",
+      };
+    }
+  };
+
+  const [state, formAction, isPending] = useActionState(handleFormSubmit, {
+    error: "",
+    status: "INITIAL",
+  });
 
   return (
-    <form action={() => {}} className="startup-form">
+    <form action={formAction} className="startup-form">
       <div>
         <label htmlFor="title" className="startup-form_label">
           Title
@@ -27,7 +80,7 @@ const StartupForm = () => {
           placeholder="Startup title"
         />
 
-        {errors.title && <p className="startup-input_error">{errors.title}</p>}
+        {errors.title && <p className="startup-form_error">{errors.title}</p>}
       </div>
       <div>
         <label htmlFor="description" className="startup-form_label">
@@ -42,7 +95,7 @@ const StartupForm = () => {
         />
 
         {errors.description && (
-          <p className="startup-input_error">{errors.description}</p>
+          <p className="startup-form_error">{errors.description}</p>
         )}
       </div>
 
@@ -59,7 +112,7 @@ const StartupForm = () => {
         />
 
         {errors.category && (
-          <p className="startup-input_error">{errors.category}</p>
+          <p className="startup-form_error">{errors.category}</p>
         )}
       </div>
 
@@ -69,13 +122,13 @@ const StartupForm = () => {
         </label>
         <Input
           id="link"
-          name="linl"
+          name="link"
           className="startup-form_input"
           required
           placeholder="Startup Image URL"
         />
 
-        {errors.link && <p className="startup-input_error">{errors.link}</p>}
+        {errors.link && <p className="startup-form_error">{errors.link}</p>}
       </div>
 
       <div data-color-mode="light">
@@ -99,7 +152,7 @@ const StartupForm = () => {
           }}
         />
 
-        {errors.pitch && <p className="startup-input_error">{errors.pitch}</p>}
+        {errors.pitch && <p className="startup-form_error">{errors.pitch}</p>}
       </div>
 
       <Button
