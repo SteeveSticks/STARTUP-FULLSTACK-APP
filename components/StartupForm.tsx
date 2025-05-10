@@ -9,7 +9,7 @@ import { Send } from "lucide-react";
 import { formSchma } from "@/lib/validation";
 import { z } from "zod";
 import { toast } from "sonner";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { createPitch } from "@/lib/action";
 
 const StartupForm = () => {
@@ -34,7 +34,7 @@ const StartupForm = () => {
       if (result.status == "SUCCESS") {
         toast.success("Your startp pitch has been created successfully");
 
-        router.push(`/startup/${result.id}`);
+        router.push(`/startup/${result._id}`);
       }
 
       return result;
@@ -75,7 +75,7 @@ const StartupForm = () => {
           name="title"
           className="startup-form_input"
           required
-          placeholder="Startup title"
+          placeholder="Startup Title"
         />
 
         {errors.title && <p className="startup-form_error">{errors.title}</p>}
