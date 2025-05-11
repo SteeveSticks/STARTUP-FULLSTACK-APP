@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import UserStartups from "@/components/UserStartups";
 import { Suspense } from "react";
+import { StartupCardSkeleton } from "@/components/StartupCard";
 
 export const experimental_ppr = true;
 
@@ -44,7 +45,7 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
             {session?.id === id ? "Your" : "All"} Startups
           </p>
           <ul className="card_grid-sm">
-            <Suspense fallback={<p>Loading...</p>}>
+            <Suspense fallback={<StartupCardSkeleton />}>
               <UserStartups id={id} />
             </Suspense>
           </ul>
