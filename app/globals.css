@@ -90,7 +90,7 @@
   }
 
   .profile_card {
-    @apply w-80 px-6 pb-6 pt-20 flex flex-col justify-center items-center bg-white border-[5px] border-black shadow-xs rounded-[30px] relative z-0 h-fit max-lg:w-full;
+    @apply w-80 px-6 pb-6 pt-20 flex flex-col justify-center items-center bg-primary border-[5px] border-black shadow-xs rounded-[30px] relative z-0 h-fit max-lg:w-full;
   }
 
   .profile_title {
