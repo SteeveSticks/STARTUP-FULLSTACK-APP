@@ -21,6 +21,7 @@ export const experimental_ppr = true;
 const page = async ({ params }: { params: Promise<{ id: string }> }) => {
   const id = (await params).id;
 
+  // use Promise.all for running two request at the same time, so the longest request will only be the time both runs not the both time
   const [post, { select: editorPosts }] = await Promise.all([
     client.fetch(STARTUP_BY_ID_QUERY, { id }),
     client.fetch(PLAYLIST_BY_SLUG_QUERY, {
