@@ -1,7 +1,9 @@
-# 🚀 StartupFounders
+# 🚀 StartupFounder
 
 StartupFounders is a modern web platform built for aspiring founders and entrepreneurs to share insights, resources, and startup journeys.  
 It combines **Next.js**, **Sanity CMS**, and **Sentry monitoring** to deliver a scalable, content-rich experience with real-time reliability tracking.
+
+<img width="1347" height="680" alt="Screenshot 2025-08-31 013041" src="https://github.com/user-attachments/assets/ccfced5a-01b6-467c-8f0a-f835d48538aa" />
 
 ---
 
