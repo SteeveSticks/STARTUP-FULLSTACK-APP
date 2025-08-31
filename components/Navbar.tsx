@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
-import { BadgePlus, LogOut } from "lucide-react";
+import { BadgePlus, Github, GithubIcon, LogOut } from "lucide-react";
 
 const Navbar = async () => {
   const session = await auth();
