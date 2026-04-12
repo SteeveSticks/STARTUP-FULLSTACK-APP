@@ -3,15 +3,15 @@
 StartupFounders is a modern web platform built for aspiring founders and entrepreneurs to share insights, resources, and startup journeys.  
 It combines **Next.js**, **Sanity CMS**, and **Sentry monitoring** to deliver a scalable, content-rich experience with real-time reliability tracking.
 
-<img width="1347" height="680" alt="Screenshot 2025-08-31 013041" src="https://github.com/user-attachments/assets/ccfced5a-01b6-467c-8f0a-f835d48538aa" />
+<img width="1894" height="951" alt="image" src="https://github.com/user-attachments/assets/56790941-a831-47bd-bc47-d51dfa6b7165" />
 
 ---
 
 ## ✨ Features
 
-- 📰 **Dynamic Content** – Powered by Sanity for easy content management
-- 🎨 **Modern UI/UX** – Styled with Tailwind CSS v4
-- 📊 **Error Tracking & Performance** – Integrated with Sentry for monitoring
+- 🧞 **Dynamic Content** – Powered by Sanity for easy content management
+- 🧞 **Modern UI/UX** – Styled with Tailwind CSS v4
+- 🧞 **Error Tracking & Performance** – Integrated with Sentry for monitoring
 - ⚡ **Fast & Scalable** – Built on Next.js 15.3 + React 19
 - 🔐 **Type Safety** – Full TypeScript support
 
@@ -19,8 +19,7 @@ It combines **Next.js**, **Sanity CMS**, and **Sentry monitoring** to deliver a 
 
 ## 🛠 Tech Stack
 
-- [Next.js 15.3](https://nextjs.org/) – React framework for production
-- [React 19](https://react.dev/) – Frontend UI
+- [Next.js 15.3](https://nextjs.org/) – Next.js framework for production/speed
 - [Sanity 3.85](https://www.sanity.io/) – Headless CMS for managing content
 - [Tailwind CSS 4.1.4](https://tailwindcss.com/) – Utility-first CSS framework
 - [TypeScript](https://www.typescriptlang.org/) – Strongly typed JavaScript
@@ -43,7 +42,7 @@ npm install
 ```
 
 3. Set up environment variables
-   create a .env.local file in the root directory and add the following variables:
+Create a .env.local file in the root directory and add the following variables:
 
 ```
 NEXT_PUBLIC_SENTRY_DSN=https://<your-sentry-dsn>
@@ -63,7 +62,7 @@ npm run dev
 ## Deployment
 
 - Deployed on Vercel
-- Sentry monnitoring enabled for both frontend and backend
+- Sentry monitoring enabled for both frontend and backend
 
 ## Monitoring with Sentry
 
@@ -71,7 +70,7 @@ Sentry is configured to
 
 - Track errors and crashes in real-time
 - Measure performance metrics(page load time, response time, etc.)
-- Provide insights into user session
+- Provide insights into user sessions
 
 ## Authors
 
